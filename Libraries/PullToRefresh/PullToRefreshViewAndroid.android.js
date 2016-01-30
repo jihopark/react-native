@@ -83,7 +83,8 @@ var PullToRefreshViewAndroid = React.createClass({
 
   _onRefresh: function() {
     this.props.onRefresh && this.props.onRefresh();
-    this.refs[NATIVE_REF].setNativeProps({refreshing: !!this.props.refreshing});
+    if (this.refs[NATIVE_REF])
+      this.refs[NATIVE_REF].setNativeProps({refreshing: !!this.props.refreshing});
   }
 });
 
